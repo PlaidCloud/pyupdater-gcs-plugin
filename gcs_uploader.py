@@ -120,7 +120,7 @@ class GCSUploader(BaseUploader):
                     continue
                 self.__setattr__(item, creds[item])
         except:
-            LOG.warn(f"Unable to set config with creds file provided in config ({gcs_creds_path}). config: {config}\n Ignoring...")
+            LOG.exception(f"Unable to set config with creds file provided in config ({gcs_creds_path}). config: {config}\n Ignoring...")
 
         required_val_map = {
             'type': self.type_,
